@@ -170,6 +170,9 @@ print("Task 5b: ")
 function feetToCM(feet){
     return feet * 30.48;
 }
+
+print(feetToCM(5.6));
+
 newLine();
 
 /************************************************************** Task 6 **************************************************************/
@@ -184,10 +187,11 @@ function annoyingSong(){
         print(bottlesOfSoda + " bottles of soda, take one down pass it around")
         bottlesOfSoda--;
         print(bottlesOfSoda + " bottles of soda on the wall")
+        print("=================")
     }
 }
-
-newLine()
+annoyingSong();
+newLine();
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -198,16 +202,42 @@ newLine()
 //60s should be D 
 //and anything below 60 should be F
 
+print("Task 7:")
 
+function gradeCalc(numberGrade){
+    if(numberGrade >= 90) {return "A"}
+    if(numberGrade >= 80) {return "B"}
+    if(numberGrade >= 70) {return "C"}
+    if(numberGrade >= 60) {return "D"}
+    else {return "F"}
+}
 
-
+print(gradeCalc(78))
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+print("Stretch 1: ")
+function numberOfVowels(givenString){
+    givenString = givenString.toLowerCase();
+    let numberOfVowels = 0;
+    let givenAsArray = givenString.split("");
+    let vowels = ['a', 'e', 'i', 'o', 'u']
 
+    for(let i = 0; i <= givenAsArray.length-1; i++){
+        for(let j = 0; j <= vowels.length-1; j++){
+            if(givenAsArray[i] == vowels[j]){
+                numberOfVowels++;
+            }
+        }
+    }
+
+    return numberOfVowels;
+}
+
+print(numberOfVowels("Cullen"));
 
 
 
