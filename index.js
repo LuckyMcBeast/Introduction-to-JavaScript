@@ -154,26 +154,40 @@ newLine();
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
+
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+print("Task 5a: ")
 
-
-
-
+function kilometersToMiles(kilometers){
+    return kilometers * 0.621371;
+}
+print(kilometersToMiles(20));
+newLine();
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
+print("Task 5b: ")
 
-
-
-
+function feetToCM(feet){
+    return feet * 30.48;
+}
+newLine();
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
+print("Task 6:")
+function annoyingSong(){
+    let bottlesOfSoda = 99;
+    while(bottlesOfSoda>0){
+        print(bottlesOfSoda + " bottles of soda on the wall,") 
+        print(bottlesOfSoda + " bottles of soda, take one down pass it around")
+        bottlesOfSoda--;
+        print(bottlesOfSoda + " bottles of soda on the wall")
+    }
+}
 
-
-
-
+newLine()
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
