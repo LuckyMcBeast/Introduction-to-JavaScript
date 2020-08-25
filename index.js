@@ -14,10 +14,10 @@ print("Task 1b:");
 let firstVar = 9;
 const secondVar = 4;
 
-if (firstVar > secondVar){
+if (firstVar > secondVar) {
     firstVar--;
 }
-else{
+else {
     firstVar = secondVar;
 }
 print(firstVar);
@@ -52,13 +52,13 @@ print("Task 2:")
  * @returns A human's age in dog years
  * @param {Number} humanAge 
  */
-function dogYears(humanAge){
+function dogYears(humanAge) {
     return humanAge * 7;
 }
 
 print(dogYears(27));
 
-
+newLine();
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
 //takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
@@ -76,10 +76,40 @@ print(dogYears(27));
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
+print("Task 3: ")
 
 
+function dogFeeder(weight, age) {
+    if (age >= 1) {
+        if (weight <= 5) {
+            return weight * .05;
+        }
+        if (weight > 5 && weight <= 10) {
+            return weight * .04;
+        }
+        if (weight > 10 && weight <= 15) {
+            return weight * .03;
+        }
+        if (weight > 15) {
+            return weight * .02;
+        }
+    }
+    else {
+        if (age <= 0.333) {
+            return weight * .1;
+        }
+        if (age > 0.333 && age <= 0.583) {
+            return weight * .05;
+        }
+        if (age > 0.583) {
+            return weight * .04;
+        }
+    }
+}
 
-
+print(dogFeeder(15, 1));
+print(dogFeeder(2, .583));
+newLine();
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
@@ -88,8 +118,39 @@ print(dogYears(27));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
+print("Task 4: ")
 
+function rockPaperSissors(yourWeaponOfChoice) {
+    let yourChoice = 4;
+    let options = ["rock", "paper", "sissors"]
+    for (let i = 0; i <= options.length; i++) {
+        if (options[i] === yourWeaponOfChoice.toLowerCase()) {
+            yourChoice = i;
+        }
+    }
+    const computersChoice = Math.floor(Math.random() * Math.floor(3));
 
+    if (yourChoice == 4) {
+        return "What game are you playing?";
+    }
+
+    if (computersChoice == yourChoice) {
+        return "It's a draw";
+    }
+
+    if ((computersChoice == 0 && yourChoice == 2) ||
+        (computersChoice == 1 && yourChoice == 0) ||
+        (computersChoice == 2 && yourChoice == 1)){
+            return "You lose. The computer played " + options[computersChoice] + ".";
+        }
+    
+    else{
+        return "You win. The computer played " + options[computersChoice] + ".";
+    }
+}
+
+print(rockPaperSissors("rock"));
+newLine();
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -145,10 +206,10 @@ print(dogYears(27));
 
 /********************************************************** Quality of Life **********************************************************/
 
-function newLine(){
+function newLine() {
     console.log("");
 }
 
-function print(toBePrinted){
+function print(toBePrinted) {
     console.log(toBePrinted);
 }
