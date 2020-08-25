@@ -1,25 +1,38 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
-console.log("Task 1a:");
+print("Task 1a:");
 
 let votingAge = 25;
 if (votingAge > 18) {
     console.log(true);
 }
 
+newLine();
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+print("Task 1b:");
 
+let firstVar = 9;
+const secondVar = 4;
 
+if (firstVar > secondVar){
+    firstVar--;
+}
+else{
+    firstVar = secondVar;
+}
+print(firstVar);
 
+newLine();
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-console.log(Number("1999"));
+print("Task 1c:");
 
+print(Number("1999"));
 
-
+newLine();
 //Task d: Write a function to multiply a*b 
-
+print("Task 1d:");
 /**
- * Multiplies two numbers
+ * @returns the product of two numbers
  * @param {Number} a  First number
  * @param {Number} b  Second Number
  */
@@ -27,15 +40,23 @@ function multiply(a, b) {
     return a * b;
 }
 
-console.log(multiply(8, 2));
+print(multiply(8, 2));
 
-
+newLine();
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
+print("Task 2:")
 
+/**
+ * @returns A human's age in dog years
+ * @param {Number} humanAge 
+ */
+function dogYears(humanAge){
+    return humanAge * 7;
+}
 
-
+print(dogYears(27));
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -122,4 +143,12 @@ console.log(multiply(8, 2));
 
 
 
+/********************************************************** Quality of Life **********************************************************/
 
+function newLine(){
+    console.log("");
+}
+
+function print(toBePrinted){
+    console.log(toBePrinted);
+}
